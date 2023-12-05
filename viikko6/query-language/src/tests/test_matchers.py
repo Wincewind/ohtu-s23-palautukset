@@ -4,10 +4,11 @@ from player_reader import PlayerReader
 from matchers import And, HasAtLeast, PlaysIn, Not, HasFewerThan, All, Or
 
 class TestMatchers(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         url = "https://studies.cs.helsinki.fi/nhlstats/2022-23/players.txt"
         reader = PlayerReader(url)
-        self.stats = Statistics(reader)
+        cls.stats = Statistics(reader)
 
     def test_Not_and_HaveFewer(self):
         matcher_one = And(

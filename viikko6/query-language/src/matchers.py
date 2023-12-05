@@ -44,9 +44,9 @@ class Not:
             return True
         return False
 
-
+#Tämän All tarkoitus jäi hieman epäselväksi.
 class All(And):
-    def test(self, player):
+    def test(self, player=None):
         return True
     
 class Or(And):
